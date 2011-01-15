@@ -20,15 +20,20 @@ In your settings.js file, add:
 to the top of the file.
 
 In the `MIDDLEWARE_CLASSES` section, add `facebook.middleware.FacebookMiddleware` somewhere
-in the array after `drty.contrib.sessions.middleware.SessionMiddleware`.
+in the array after `drty.contrib.sessions.middleware.SessionMiddleware`. For example:
 
-You must also add:
+    MIDDLEWARE_CLASSES: [
+        drty.contrib.sessions.middleware.SessionMiddleware,
+        facebook.middleware.FacebookMiddleware
+    ]
+
+And finally, you must also add:
 
     FB: {
         APP_ID: 'PUT YOUR APP ID HERE'
     }
 
-to your settings hash, and replace the placeholder text with your app id.
+to your settings hash, so drty-facebook knows your Facebook app id. (To create one, go [here](http://www.facebook.com/developers/createapp.php))
 
 ## HOW DOES IT WORK?
 
@@ -47,8 +52,8 @@ will be an array of friends of the current user.
 
 ## EXAMPLE
 
-Included in the source tree is an example/ folder that contains a simple example of how to use this library.
-To run, go to the examples directory and type:
+Included in the source tree is an example folder that contains a simple example of how to use this library.
+To run, go to the example directory and type:
 
     $ node manage.js runserver
 
