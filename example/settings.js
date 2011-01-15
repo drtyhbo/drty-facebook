@@ -1,4 +1,5 @@
-var drty = require('drty');
+var drty = require('drty'),
+	facebook = require('drty-facebook');
 
 exports.settings = {
 	DATABASE: {
@@ -10,14 +11,20 @@ exports.settings = {
 		PORT: ''
 	},
 	TEMPLATE_DIRS: [
-		// ENTER TEMPLATE DIRECTORIES HERE
+		require('path').join(__dirname, 'templates')
 	],
 	INSTALLED_APPS: [
-		// drty.contrib.sessions
 	],
 	MIDDLEWARE_CLASSES: [
-		// drty.contrib.sessions.middleware.SessionMiddleware
+		drty.contrib.sessions.middleware.SessionMiddleware,
+		facebook.middleware.FacebookMiddleware
 	],
+	
+	FB: {
+		APP_ID: 'APP_ID'
+	},
+
+	SESSION_ENGINE: drty.contrib.sessions.backends.cache,
 
 	ROOT_URLCONF: require('./urls').urlpatterns
 };
