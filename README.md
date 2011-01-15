@@ -33,7 +33,8 @@ And finally, you must also add:
         APP_ID: 'PUT YOUR APP ID HERE'
     }
 
-to your settings hash, so drty-facebook knows your Facebook app id. (To create one, go [here](http://www.facebook.com/developers/createapp.php))
+to your settings hash, so drty-facebook knows your Facebook app id. (To create one, go [here](http://www.facebook.com/developers/createapp.php)).
+If you already have an app, please go [here](http://www.facebook.com/developers/apps.php) to grab the app settings.
 
 ## HOW DOES IT WORK?
 
