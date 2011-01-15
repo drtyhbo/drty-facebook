@@ -1,0 +1,11 @@
+{ 
+	"name": "drty-facebook",
+	"description": "Adding Facebook support to drty",
+	"version": "0.0.1",
+	"author": "Andreas Binnewies <drtyhbo@gmail.com>",
+	"main": "./lib/drty-facebook",
+	"engines": { "node" : ">=0.2.6" },
+	"dependencies": {
+		"nodeunit": ">=0.5.0"
+	}
+}
