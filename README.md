@@ -17,8 +17,12 @@ In your settings.js file, add:
 
     var facebook = require('drty-facebook');
 
-to the top of the file. In the `MIDDLEWARE_CLASSES` section, add `facebook.middleware.FacebookMiddleware` somewhere
-in the array after `drty.contrib.sessions.middleware.SessionMiddleware`. You must also add:
+to the top of the file.
+
+In the `MIDDLEWARE_CLASSES` section, add `facebook.middleware.FacebookMiddleware` somewhere
+in the array after `drty.contrib.sessions.middleware.SessionMiddleware`.
+
+You must also add:
 
     FB: {
         APP_ID: 'PUT YOUR APP ID HERE'

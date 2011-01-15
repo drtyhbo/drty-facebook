@@ -14,10 +14,9 @@ exports.urlpatterns = urls.patterns(
 			function(request, response) {
 				request.fb.me(function(error, me) {
 					request.fb.friends(function(error, friends) {
-						console.log(friends);
 						directToTemplate(request, response, 'home.tpl', {
 							me: me,
-							friends: friends.data
+							friends: friends
 						});						
 					});
 				});
