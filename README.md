@@ -19,11 +19,10 @@ In your settings.js file, add:
 
 to the top of the file.
 
-In the `MIDDLEWARE_CLASSES` section, add `facebook.middleware.FacebookMiddleware` somewhere
-in the array after `drty.contrib.sessions.middleware.SessionMiddleware`. For example:
+In the `MIDDLEWARE_CLASSES` section, add `facebook.middleware.FacebookMiddleware`.
 
     MIDDLEWARE_CLASSES: [
-        drty.contrib.sessions.middleware.SessionMiddleware,
+		... other classes ...
         facebook.middleware.FacebookMiddleware
     ]
 
