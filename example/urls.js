@@ -1,12 +1,13 @@
 var drty = require('drty'),
-	urls = drty.urls,
+	patterns = drty.urls.patterns,
+	url = drty.urls.url,
 	directToTemplate = drty.views.generic.simple.directToTemplate;
 
-exports.urlpatterns = urls.patterns(
-	urls.url('^/$', function(request, response) {
+exports.urlpatterns = patterns(
+	url('^/$', 'root', function(request, response) {
 			directToTemplate(request, response, 'index.tpl');
-		}, 'root'),
-	urls.url('^/home/$', [
+		}),
+	url('^/home/$', 'home', [
 			function(request, response, next) {
 				if (!request.fb) { response.redirect(drty.urls.reverse('root')); }
 				else { next(); }
@@ -22,7 +23,7 @@ exports.urlpatterns = urls.patterns(
 					});
 				});
 			}
-		], 'home'),
-	urls.url('^/xd_reciever.htm$', drty.views.static.serve, 'xd_reciever', [
-		require('path').join(__dirname, 'templates/xd_reciever.htm')])
+		]),
+	url('^/xd_reciever.htm$', 'xd_reciever', drty.views.static.serve,
+		require('path').join(__dirname, 'templates/xd_reciever.htm'))
 );
